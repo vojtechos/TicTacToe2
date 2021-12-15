@@ -10,16 +10,38 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Board board = new Board(5,4);
+        Board board = initBoard();
+
+        startGame(board);
 
     }
 
-    public void Message() {
+    public static Board initBoard() {
 
-        System.out.println("Vítejte");
+        System.out.println("Vítejte ve hře piškovorky.\nJako první si vyberte velikost hracího pole.");
+        int width = scanner.nextInt();
+        int height = scanner.nextInt();
+
+        return new Board(height, width);
 
     }
-        /**public static void writer(){
+
+    public static void startGame(Board board){
+        board.printBoard();
+        System.out.println("PlayerX je na tahu");
+
+        System.out.println("Vyber si x souřadnice");
+        int xCoordinate = scanner.nextInt();
+        System.out.println("Vyber si y souřadnice");
+        int yCoordinate = scanner.nextInt();
+
+        board.setNewValue(xCoordinate,yCoordinate,Field.TOOKBYPLAYERX);
+
+    }
+
+
+         /*
+         public static void writer(){
          File file = new File("./test.txt");
          try{
          FileOutputStream outputStream1 = new FileOutputStream(file);
@@ -34,6 +56,6 @@ public class Main {
          a.printStackTrace();
          }
          }
-         **/
+         */
 
 }
