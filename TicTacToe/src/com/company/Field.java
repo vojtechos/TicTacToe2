@@ -1,6 +1,6 @@
 package com.company;
 
-public enum Field {
+public enum Field{
 
     EMPTYSPACE,
     TOOKBYPLAYERX,
