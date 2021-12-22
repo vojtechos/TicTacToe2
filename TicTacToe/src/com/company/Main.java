@@ -21,8 +21,10 @@ public class Main {
         int width = scanner.nextInt();
         int height = scanner.nextInt();
 
-        return new Board(height, width);
+        System.out.println("Vyber si, na kolik vítězných budeš hrát:");
+        int strike = scanner.nextInt();
 
+        return new Board(height, width);
     }
 
     public static void startGame(Board board) {
@@ -37,13 +39,15 @@ public class Main {
                 System.out.println("Vyber si y souřadnice");
                 int yCoordinate = scanner.nextInt();
                 try {
-                    board.setNewValue(xCoordinate, yCoordinate, Field.TOOKBYPLAYERX);
+                    board.setNewValue(xCoordinate, yCoordinate, Field.PLAYERX);
                     isOk = true;
                 } catch (IllegalArgumentException e) {
                     System.out.println("Špatná pozice vybírej znovu");
                     isOk = false;
                 }
             } while (!isOk);
+
+            board.printBoard();
 
             player++;
         }
@@ -57,7 +61,7 @@ public class Main {
                 System.out.println("Vyber si y souřadnice");
                 int yCoordinate = scanner.nextInt();
                 try {
-                    board.setNewValue(xCoordinate, yCoordinate, Field.TOOKBYPLAYERX);
+                    board.setNewValue(xCoordinate, yCoordinate, Field.PLAYERO);
                     isOk = true;
                 } catch (IllegalArgumentException e) {
                     System.out.println("Špatná pozice vybírej znovu");
@@ -67,12 +71,9 @@ public class Main {
 
             player++;
         }
+    }
 
-        /**
-         * Zařídit opakování
-         */
-
-         /*
+/*
          public static void writer(){
          File file = new File("./test.txt");
          try{
@@ -90,4 +91,4 @@ public class Main {
          }
          */
 
-    }}
+}

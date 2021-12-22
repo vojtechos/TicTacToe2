@@ -12,7 +12,7 @@ public class Board {
       Field[][] board = new Field[m][n];
       for (int i = 0; i < board.length; i++) {
          for (int j = 0; j < board[i].length; j++) {
-            board[i][j] = Field.EMPTYSPACE;
+            board[i][j] = Field.EMPTY;
          }
       }
       this.board = board;
@@ -23,7 +23,7 @@ public class Board {
 
       for (int i = 0; i < board.length; i++) {
          for (int j = 0; j < board[i].length; j++) {
-               System.out.print("| _ ");
+               System.out.print("|   ");
          }
          System.out.println("|");
       }
@@ -31,7 +31,7 @@ public class Board {
    }
 
    public boolean isFree(int x, int y){
-      return board[x][y] == Field.EMPTYSPACE;
+      return board[x][y] == Field.EMPTY;
    }
 
    public void setNewValue(int x, int y, Field newValue){
@@ -40,6 +40,7 @@ public class Board {
       }
 
       this.board[x][y] = newValue;
+
 
    }
 
