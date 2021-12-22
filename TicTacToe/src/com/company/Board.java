@@ -41,18 +41,6 @@ public class Board {
 
       this.board[x][y] = newValue;
 
-      /**
-       * Snaha o přepsání pozice na X, ale nic z toho :/
-       */
-
-      for (int i = 0; i < board.length; i++) {
-         for (int j = 0; j < board[i].length; j++) {
-            if (board.length[i][j] == 'X') {
-            }
-         }
-      }
-
-
    }
 
    public void checkWin(int strike){
