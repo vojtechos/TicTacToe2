@@ -1,2 +1,2 @@
-# Tic-Tac-Toe-PRO
-Piškovrky s Lukášem
+# TicTacToe
+Piškovrky s Lukášem Mazlíkem
